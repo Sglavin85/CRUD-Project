@@ -44,9 +44,11 @@ function createCard(obj) {
     let editBtn = document.createElement("button")
     editBtn.setAttribute("id", `edit--${obj.id}`)
     editBtn.innerHTML = "EDIT"
+    editBtn.setAttribute("class", "editBtn")
 
     let deleteBtn = document.createElement("button")
     deleteBtn.setAttribute("id", `delete--${obj.id}`)
+    deleteBtn.setAttribute("class", "deleteBtn")
     deleteBtn.innerHTML = "DELETE"
 
     btnContainer.appendChild(editBtn)

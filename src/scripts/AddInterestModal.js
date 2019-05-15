@@ -1,4 +1,7 @@
 import API from "./dbCalls"
+import postAllInterests from "./interestsToDom"
+
+let $primaryDiv = document.querySelector("#primaryContainer")
 
 function newInterestListener() {
     const newInterestBtn = document.querySelector("#interestLink")
@@ -33,12 +36,18 @@ function newInterestListener() {
             }
 
             API.addInterest(obj)
+                .then(_added => {
+                    postAllInterests()
+                })
             let inputs = document.querySelectorAll("input")
             let textBox = document.querySelector("textarea")
             inputs.forEach(input => {
                 input.value = ""
             })
             textBox.value = ""
+            modal.style.display = "none"
+            $primaryDiv.innerHTML = ""
+
         }
     })
 }

@@ -3,6 +3,9 @@ import API from "./dbCalls";
 import postAllInterests from "./interestsToDom"
 import newInterestListener from "./AddInterestModal"
 
+postAllInterests();
+newInterestListener();
+
 // fill the drop down menu
 API.getAllPlaces()
     .then(places => {
@@ -18,7 +21,21 @@ API.getAllPlaces()
 
     })
 
+let $primaryDiv = document.querySelector("#primaryContainer")
 
-postAllInterests();
-newInterestListener();
+$primaryDiv.addEventListener("click", (e) => {
+    console.log(e)
+    if (e.target.className === "deleteBtn") {
+        let targetArray = e.target.id.split("--")
+        let targetId = targetArray[1]
+        API.deleteInterest(targetId)
+            .then(_added => {
+                $primaryDiv.innerHTML = ""
+                postAllInterests()
+            })
+    }
+})
+
+
+
 
