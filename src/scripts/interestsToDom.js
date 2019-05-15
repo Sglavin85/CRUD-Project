@@ -17,13 +17,13 @@ function createCard(obj) {
     title.textContent = obj.name
 
     let location = document.createElement("h3")
-    location.textContent = obj.place.name
+    location.textContent = `Location: ${obj.place.name}`
 
     let description = document.createElement("h3")
-    description.textContent = obj.description
+    description.textContent = `Description: ${obj.description}`
 
     let cost = document.createElement("h3")
-    cost.textContent = obj.cost
+    cost.textContent = `Cost: $${obj.cost}`
 
     let review = document.createElement("h3")
     if (obj.review === "") {
