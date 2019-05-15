@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,10 +11,37 @@
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <nav id="topNav">
+        <div id="title">
+            <h1>TERNARY TRAVELER</h1>
+        </div>
+        <div id="link">
+            <div id="interestLink">
+                <span id="newInterest">NEW INTEREST</span>
+            </div>
+        </div>
+    </nav>
 
+    <main id="pageContainer">
+        <div id="primaryContianer"></div>
+        <div id="modalContainer">
+            <div id="modal">
+                <div id="modalContent">
+                    <h2>New Interest</h2>
+                    <label for="interestName">Name:</label><input type="text" name="interestNAme" id="interestName">
+                    <label for="interestCost">Cost:</label><input type="text" name="ineterestCost" id="interestCost">
+                    <label for="interestDescription">Description:</label><textarea name="interestDescription"
+                        id="interestDescription" cols="30" rows="10"></textarea>
+                    <select name="interestLocation" id="interestLocation">
+
+                    </select>
+                    <button id="submitBtn">ADD INTEREST</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footerNav"></footer>
     <script src="bundle.js"></script>
 </body>
 
 </html>
-
