@@ -15,7 +15,7 @@ const APIManager = {
             headers: {
                 "Content-Type": "application/json"
             },
-            bode: JSON.stringify(obj)
+            body: JSON.stringify(obj)
         })
             .then(response => response.json)
     },
@@ -24,7 +24,7 @@ const APIManager = {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
             body: JSON.stringify(obj)
         })
             .then(response => response.json())
