@@ -46,7 +46,7 @@ h1 {
     position: absolute;
     z-index: 1;
     margin-left: -10px;
-    top: 100px;
+    top: 0;
     left: 0;
     height: 100%;
     width: 100%;
