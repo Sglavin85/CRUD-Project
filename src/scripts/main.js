@@ -1,8 +1,7 @@
-import sayHello from "./hello"
-import sayGoodbye from "./goodbye"
-import SandwichMaker from "./sandwichMaker"
+import APIManager from "./dbCalls";
 
-sayHello()
-sayGoodbye()
-
-SandwichMaker.placeOrder("rye", "capicola", "provolone")
+//testing import of dbcalls and calling getAllPlaces
+APIManager.getAllPlaces()
+    .then((places) => {
+        console.log("Oh the places you will go:", places);
+    });
