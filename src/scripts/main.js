@@ -1,9 +1,5 @@
 
 import APIManager from "./dbCalls";
+import postAllInterests from "./interestsToDom"
 
-// //testing import of dbcalls and calling getAllPlaces
-// APIManager.getAllPlaces()
-//     .then((places) => {
-//         console.log("Oh the places you will go:", places);
-//     });
-
+postAllInterests();
