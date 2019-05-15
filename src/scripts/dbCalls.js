@@ -9,6 +9,10 @@ const APIManager = {
         return fetch(`${baseURL}/interests?_expand=place`)
             .then(response => response.json())
     },
+    getSingleInterest: function (id) {
+        return fetch(`${baseURL}/interests/${id}?_expand=place`)
+            .then(response => response.json())
+    },
     addInterest: function (obj) {
         return fetch(`${baseURL}/interests`, {
             method: "POST",

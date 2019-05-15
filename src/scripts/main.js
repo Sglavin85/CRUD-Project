@@ -43,8 +43,63 @@ $primaryDiv.addEventListener("click", (e) => {
         cancelBtn.addEventListener("click", (e) => {
             modal.style.display = "none"
         })
+    } else if (e.target.className === "editBtn") {
+        let targetArray = e.target.id.split("--")
+        let targetId = targetArray[1]
+        let submitBtn = document.querySelector("#submitBtn")
+        submitBtn.innerHTML = "SUBMIT EDIT"
+        let modal = document.querySelector("#modal")
+        modal.style.display = "block"
+        API.getSingleInterest(targetId)
+            .then(interest => {
+                document.querySelector("#interestName").value = interest.name
+                document.querySelector("#interestCost").value = interest.cost
+                document.querySelector("#interestDescription").value = interest.description
+                document.querySelector("#interestLocation").value = interest.place.id
+                document.querySelector("#interestReview").value = interest.review
+            })
+        submitBtn.onclick = () => {
+            let interestName = document.querySelector("#interestName").value
+            let interestCost = document.querySelector("#interestCost").value
+            let interestDescription = document.querySelector("#interestDescription").value
+            let interestLocation = document.querySelector("#interestLocation").value
+            let interestReview = document.querySelector("#interestReview").value
+
+            let obj = {
+                placeId: interestLocation,
+                imgUrl: "",
+                name: interestName,
+                description: interestDescription,
+                cost: interestCost,
+                review: interestReview
+            }
+
+            API.editInterest(obj, targetId)
+                .then(_added => {
+                    postAllInterests()
+                })
+            let inputs = document.querySelectorAll("input")
+            let textBox = document.querySelector("textarea")
+            inputs.forEach(input => {
+                input.value = ""
+            })
+            textBox.value = ""
+            modal.style.display = "none"
+            $primaryDiv.innerHTML = ""
+        }
+        let inputs = document.querySelectorAll("input")
+        let textBox = document.querySelector("textarea")
+        let cancelBtn = document.querySelector("#cancelBtn")
+        cancelBtn.onclick = () => {
+            inputs.forEach(input => {
+                input.value = ""
+            })
+            textBox.value = ""
+            modal.style.display = "none"
+        }
     }
 })
+
 
 
 

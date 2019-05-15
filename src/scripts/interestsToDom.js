@@ -29,7 +29,7 @@ function createCard(obj) {
     if (obj.review === "") {
         review.textContent = "This interest has not yet been reviewed"
     } else {
-        review.textContent = obj.review
+        review.textContent = `Review: ${obj.review}`
     }
 
     let imgContainer = document.createElement("div")

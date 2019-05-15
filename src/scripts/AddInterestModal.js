@@ -7,6 +7,8 @@ function newInterestListener() {
     const newInterestBtn = document.querySelector("#interestLink")
 
     newInterestBtn.addEventListener("click", (e) => {
+        let submitBtn = document.querySelector("#submitBtn")
+        submitBtn.innerHTML = "ADD INTEREST"
         let modal = document.querySelector("#modal")
         modal.style.display = "block"
         let inputs = document.querySelectorAll("input")
@@ -19,20 +21,20 @@ function newInterestListener() {
             textBox.value = ""
             modal.style.display = "none"
         }
-        let submitBtn = document.querySelector("#submitBtn")
         submitBtn.onclick = () => {
             let interestName = document.querySelector("#interestName").value
             let interestCost = document.querySelector("#interestCost").value
             let interestDescription = document.querySelector("#interestDescription").value
             let interestLocation = document.querySelector("#interestLocation").value
+            let interestReview = document.querySelector("#interestReview").value
 
             let obj = {
-                placeId: interestLocation,
+                placeId: parseInt(interestLocation),
                 imgUrl: "",
                 name: interestName,
                 description: interestDescription,
                 cost: interestCost,
-                review: ""
+                review: interestReview
             }
 
             API.addInterest(obj)
