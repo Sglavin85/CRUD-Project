@@ -1,4 +1,4 @@
-const baseURL = "http://0.0.0.0:8088";
+const baseURL = "http://localhost:8088";
 
 const APIManager = {
     getAllPlaces: function () {
