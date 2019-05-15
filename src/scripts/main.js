@@ -26,13 +26,23 @@ let $primaryDiv = document.querySelector("#primaryContainer")
 $primaryDiv.addEventListener("click", (e) => {
     console.log(e)
     if (e.target.className === "deleteBtn") {
+        let modal = document.querySelector("#modal2")
+        modal.style.display = "flex"
+        let deleteBtn = document.querySelector("#deleteBtn")
         let targetArray = e.target.id.split("--")
         let targetId = targetArray[1]
-        API.deleteInterest(targetId)
-            .then(_added => {
-                $primaryDiv.innerHTML = ""
-                postAllInterests()
-            })
+        deleteBtn.addEventListener("click", (e) => {
+            API.deleteInterest(targetId)
+                .then(_added => {
+                    $primaryDiv.innerHTML = ""
+                    postAllInterests()
+                    modal.style.display = "none"
+                })
+        })
+        let cancelBtn = document.querySelector("#cancelDeleteBtn")
+        cancelBtn.addEventListener("click", (e) => {
+            modal.style.display = "none"
+        })
     }
 })
 
