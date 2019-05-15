@@ -41,7 +41,7 @@ h1 {
     cursor: pointer;
 }
 
-#modal {
+.modal {
     display: none;
     position: absolute;
     z-index: 1;
@@ -55,7 +55,7 @@ h1 {
     background-color: rgba(0,0,0,0.4);
   }
 
-  #modal-content {
+  .modalContent {
     display: flex;
     flex-direction: column;
     position: relative;

@@ -25,10 +25,10 @@
     <main id="pageContainer">
         <div id="primaryContainer"></div>
         <div id="modalContainer">
-            <div id="modal">
-                <div id="modalContent">
+            <div id="modal" class="modal">
+                <div id="modalContent" class="modalContent">
                     <h2>New Interest</h2>
-                    <label for="interestName">Name:</label><input type="text" name="interestNAme" id="interestName">
+                    <label for="interestName">Name:</label><input type="text" name="interestName" id="interestName">
                     <label for="interestCost">Cost:</label><input type="text" name="ineterestCost" id="interestCost">
                     <label for="interestDescription">Description:</label><textarea name="interestDescription"
                         id="interestDescription" cols="30" rows="10"></textarea>
@@ -37,6 +37,14 @@
                     </select>
                     <button id="submitBtn">ADD INTEREST</button>
                     <button id="cancelBtn">CANCEL</button>
+                </div>
+            </div>
+            <div id="modal2" class="modal">
+                <div id="modalContent2" class="modalContent">
+                    <h2>Are you sure you want to do that?</h2>
+                    <h3>Deleted Interests cannot be recovered</h3>
+                    <button id="deleteBtn">DELETE INTEREST</button>
+                    <button id="cancelDeleteBtn">CANCEL</button>
                 </div>
             </div>
         </div>
