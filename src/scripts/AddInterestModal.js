@@ -9,6 +9,8 @@ function newInterestListener() {
     newInterestBtn.addEventListener("click", (e) => {
         let submitBtn = document.querySelector("#submitBtn")
         submitBtn.innerHTML = "ADD INTEREST"
+        let modalTitle = document.querySelector("#interestTitle")
+        modalTitle.innerHTML = "Add Interest"
         let modal = document.querySelector("#modal")
         modal.style.display = "block"
         let inputs = document.querySelectorAll("input")
@@ -28,7 +30,7 @@ function newInterestListener() {
             let interestLocation = document.querySelector("#interestLocation").value
             let interestReview = document.querySelector("#interestReview").value
 
-            let obj = {
+            let doesntfuckingmatter = {
                 placeId: parseInt(interestLocation),
                 imgUrl: "",
                 name: interestName,
@@ -37,7 +39,7 @@ function newInterestListener() {
                 review: interestReview
             }
 
-            API.addInterest(obj)
+            API.addInterest(doesntfuckingmatter)
                 .then(_added => {
                     postAllInterests()
                 })
