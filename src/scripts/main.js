@@ -46,6 +46,8 @@ $primaryDiv.addEventListener("click", (e) => {
     } else if (e.target.className === "editBtn") {
         let targetArray = e.target.id.split("--")
         let targetId = targetArray[1]
+        let modalTitle = document.querySelector("#interestTitle")
+        modalTitle.innerHTML = "Edit Interest"
         let submitBtn = document.querySelector("#submitBtn")
         submitBtn.innerHTML = "SUBMIT EDIT"
         let modal = document.querySelector("#modal")

@@ -5,6 +5,7 @@ function createCard(obj) {
     let div = document.querySelector("#primaryContainer")
     let card = document.createElement("div")
     card.setAttribute("id", `card${obj.id}`)
+    card.setAttribute("class", "card")
 
     let header = document.createElement("div")
     header.setAttribute("class", "card-header")
@@ -53,11 +54,11 @@ function createCard(obj) {
 
     btnContainer.appendChild(editBtn)
     btnContainer.appendChild(deleteBtn)
+    header.appendChild(title)
     header.appendChild(btnContainer)
     card.appendChild(header)
     imgContainer.appendChild(img)
     card.appendChild(imgContainer)
-    infoContainer.appendChild(title)
     infoContainer.appendChild(location)
     infoContainer.appendChild(cost)
     infoContainer.appendChild(description)
